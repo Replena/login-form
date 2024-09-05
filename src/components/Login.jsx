@@ -10,6 +10,7 @@ import {
 import axios from 'axios';
 import StarryBackground from './StarryBackground';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from 'react-router-dom';
 
 const initialForm = {
   email: '',
@@ -27,6 +28,7 @@ export default function Login() {
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(false);
   const [termsChanged, setTermsChanged] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -69,7 +71,7 @@ export default function Login() {
           );
           if (user) {
             setForm(initialForm);
-          } else {
+            history.push('/success');
           }
         });
     }
@@ -128,7 +130,7 @@ export default function Login() {
             </Label>
           </FormGroup>
           <FormGroup className="text-center p-4">
-            <Button color="primary" disabled={!isValid}  class="button" data-cy="button">
+            <Button color="primary" disabled={!isValid}  className="button" data-cy="button">
               Sign In
             </Button>
           </FormGroup>
