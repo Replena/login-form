@@ -4,7 +4,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #000000, #000428); /* Daha siyah ve lacivert tonlarında degrade */
+  background: linear-gradient(45deg, #000000, #000428);
   background-size: 300% 300%;
   animation: gradientAnimation 3s ease infinite;
   position: absolute;
