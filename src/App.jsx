@@ -1,6 +1,6 @@
 import React from "react";
 import Login from "./components/Login";
-import "./App.css"; // CSS dosyanızı buraya dahil edin
+import "./App.css";
 
 function App() {
   return (

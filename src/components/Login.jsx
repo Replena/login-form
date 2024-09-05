@@ -8,7 +8,8 @@ import {
   FormFeedback,
 } from 'reactstrap';
 import axios from 'axios';
-import StarryBackground from './StarryBackground'; // StarryBackground bileşenini içe aktarın
+import StarryBackground from './StarryBackground';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const initialForm = {
   email: '',
@@ -76,7 +77,7 @@ export default function Login() {
 
   return (
     <>
-      <StarryBackground /> {/* Arka planı ekle */}
+      <StarryBackground />
       <div className="login-container">
         <Form onSubmit={handleSubmit}>
           <FormGroup>

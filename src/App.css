@@ -6,19 +6,12 @@ body, html {
   align-items: center;
   background: linear-gradient(45deg, #000000, #000428);
   background-size: 300% 300%;
-  animation: gradientAnimation 3s ease infinite;
-  position: absolute;
-  top: 0;
-  left: 0;
+  animation: gradientAnimation 20s ease infinite;
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-}
-
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  z-index: -3;
 }
 
 .stars {
@@ -27,38 +20,44 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Yıldızların form ile etkileşime girmesini engelle */
+  pointer-events: none;
+  z-index: -1;
 }
 
 .star {
   position: absolute;
-  background: rgb(194, 194, 218); /* Mavi yıldızlar */
+  background: rgb(194, 194, 218);
   border-radius: 50%;
-  animation: twinkle 2s infinite;
+  animation: twinkle 3s infinite;
+  opacity: 0;
 }
 
 @keyframes twinkle {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .login-container {
-  background: rgba(255, 255, 255, 0.9);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  text-align: center; /* Formu ortalamak için */
-}
-
-.login-container h1 {
-  color: #000;
-}
-
-.login-container label {
-  color: #000;
-}
-
-.login-container input {
-  color: #000; /* Yazı rengini siyah yap */
 }
